@@ -1,0 +1,55 @@
+Prueba Mod. 2
+
+
+1. Dadas las siguientes tablas:
+
+- empleado (idEmpleado, nombreEmpleado, fechaIngreso)
+- servicio (idServicio, nombreServicio, valorServicio)
+- vehiculo (idVehiculo, marcaVehiculo, modeloVehiculo)
+- prestación_servicio (idPrestacionServicio, IdServicio, idEmpleado, idVehiculo, fecha)
+
+
+a.- Mostrar la cantidad de prestaciones de servicios ejecutados entre el 01 de octubre y el 26 de
+noviembre del 2018.
+
+Select * from prestación_servicio
+where fecha between 2018-10-01 and 2018-11-26
+
+
+b.- Mostrar la cantidad total de prestaciones realizadas agrupadas por idVehiculo.
+
+Select idvehiculo
+* from prestación_servicio
+group by idvehiculo
+
+
+c.- Mostrar los vehículos con la menor cantidad de prestaciones de servicios realizados.
+
+Select idvehiculo (count)
+* from prestación_servicio
+where idPrestacionServicio (min)
+group by idvehiculo
+
+2. Crear con DDL una tabla empleado que contenga lo siguiente:
+IdEmpleado, nombre, apellido, dirección, teléfono,idDepartamento
+
+CREATE DATABASE empresa
+
+CREATE TABLE empleado (
+    Id_Empleado char(10) not null,
+    Nombre char (15) not null,
+    Apellido char (15) not null,
+    Direccion char (30) not null,
+    Telefono char (9) not null,
+    Id_Departamento char (10) not null
+)
+
+Se creó una base datos con nombre "empresa", esta para poder realizar la creación de la tabla solicitada.
+ 
+3.-Se desea crear un sitio web con información referente a las películas en cartel en las salas de
+un dudoso cine cercano a la plaza de armas. 
+
+Se creó un modelo conceptual con los requerimientos dados, posterior a esto se paso a un modelo lógico y luego físico.
+Se adjuntan los respectivos modelos, además del archivo SQL solicitado.  
+
+
